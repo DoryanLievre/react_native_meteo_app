@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Image, TouchableOpacity, Linking } from 'react-native';
 
 
 export default function AboutScreen() {
@@ -13,14 +13,14 @@ export default function AboutScreen() {
               <Text style={styles.name}>METEO TRAINING APP</Text>
               <Text style={styles.info}>By Hydri</Text>
               <Text style={styles.description}>About US : Application Météo développé par Doryan Lievre, élève de la CodingFactory actuellement en recherche d'alternance</Text>
-              <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Linkedin</Text>  
+              <TouchableOpacity style={styles.buttonContainer}   onPress={() => Linking.openURL('https://www.linkedin.com/in/doryan-li%C3%A8vre/')}  >
+                <Text>LinkedIn</Text>  
               </TouchableOpacity> 
-              <TouchableOpacity style={styles.buttonContainer}>
+              <TouchableOpacity style={styles.buttonContainer}  onPress={() => Linking.openURL('https://github.com/DoryanLievre')} >
                 <Text>Github</Text>  
               </TouchableOpacity>  
               <TouchableOpacity style={styles.buttonContainer}>
-                <Text>mail : dlievre.dev@gmaiL.com</Text>  
+                <Text>mail : dlievre.dev@gmail.com</Text>  
               </TouchableOpacity>  
               <TouchableOpacity style={styles.buttonContainer}>
                 <Text>Phone : 06 89 66 28 84 </Text>  
@@ -35,6 +35,7 @@ export default function AboutScreen() {
 AboutScreen.navigationOptions = {
   title: 'About me',
 };
+
 const styles = StyleSheet.create({
   header:{
     backgroundColor: "#44a69e",
